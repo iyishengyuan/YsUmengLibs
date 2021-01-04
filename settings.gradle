@@ -1,2 +1,2 @@
 include ':app', ':ysumenglibs'
-rootProject.name='YsUmengLib'
+//rootProject.name='YsUmengLib'
