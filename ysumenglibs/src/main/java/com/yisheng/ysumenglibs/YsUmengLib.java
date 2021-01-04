@@ -8,6 +8,7 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+import com.umeng.message.IUmengCallback;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
 import com.umeng.socialize.PlatformConfig;
@@ -17,14 +18,29 @@ public class YsUmengLib {
     private static final String TAG = "YsUmengLib";
     public static final String UPDATE_STATUS_ACTION = "com.umeng.message.example.action.UPDATE_STATUS";
 
+    /**
+     * 初始化 分析SDK
+     *
+     * @param context
+     * @param appKey
+     * @param channelId
+     * @param UmengMessageSecret
+     */
     public static void init(Context context, String appKey, String channelId, String UmengMessageSecret) {
         UMConfigure.init(context, appKey, channelId, UMConfigure.DEVICE_TYPE_PHONE, UmengMessageSecret);
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
     }
 
-    public static void initPush(final Context context,String packageName, final YsUmengInitCallBack callBack) {
+    /**
+     * 初始化 推送SDK
+     * @param context
+     * @param packageName
+     * @param isOpen
+     * @param callBack
+     */
+    public static void initPush(final Context context, String packageName, final boolean isOpen, final YsUmengInitCallBack callBack) {
         //获取消息推送代理示例
-        PushAgent mPushAgent = PushAgent.getInstance(context);
+        final PushAgent mPushAgent = PushAgent.getInstance(context);
         mPushAgent.setResourcePackageName(packageName);
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {
@@ -36,6 +52,34 @@ public class YsUmengLib {
                 if (callBack != null) {
                     callBack.onGetDeviceToken(deviceToken);
                 }
+
+                try {
+                    if (isOpen) {
+                        mPushAgent.enable(new IUmengCallback() {
+                            @Override
+                            public void onSuccess() {
+                            }
+
+                            @Override
+                            public void onFailure(String s, String s1) {
+                            }
+                        });
+                    } else {
+                        mPushAgent.disable(new IUmengCallback() {
+                            @Override
+                            public void onSuccess() {
+                            }
+
+                            @Override
+                            public void onFailure(String s, String s1) {
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+//            e.printStackTrace();
+                }
+
+
             }
 
             @Override
@@ -48,6 +92,13 @@ public class YsUmengLib {
         });
     }
 
+    /**
+     * 初始化 分享SDK
+     *
+     * @param context
+     * @param WX_APP_ID
+     * @param WX_APPSECRET
+     */
     public static void initShare(final Context context, String WX_APP_ID, String WX_APPSECRET) {
         UMShareAPI.get(context);
         UMConfigure.setLogEnabled(false);
@@ -59,10 +110,9 @@ public class YsUmengLib {
 
     }
 
-
     public interface YsUmengInitCallBack {
 
-        void onGetDeviceToken(String string);
+        void onGetDeviceToken(String deviceToken);
 
         void onGetDeviceTokenError(String s, String s1);
     }
