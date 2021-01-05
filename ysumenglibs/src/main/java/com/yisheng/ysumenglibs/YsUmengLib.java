@@ -22,21 +22,22 @@ public class YsUmengLib {
      * 初始化 分析SDK
      *
      * @param context
-     * @param appKey
-     * @param channelId
-     * @param UmengMessageSecret
+     * @param umengAppKey
+     * @param channelId   渠道号
+     * @param umengSecret
      */
-    public static void init(Context context, String appKey, String channelId, String UmengMessageSecret) {
-        UMConfigure.init(context, appKey, channelId, UMConfigure.DEVICE_TYPE_PHONE, UmengMessageSecret);
+    public static void init(Context context, String umengAppKey, String channelId, String umengSecret) {
+        UMConfigure.init(context, umengAppKey, channelId, UMConfigure.DEVICE_TYPE_PHONE, umengSecret);
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
     }
 
     /**
      * 初始化 推送SDK
+     *
      * @param context
-     * @param packageName
-     * @param isOpen
-     * @param callBack
+     * @param packageName 主应用包名
+     * @param isOpen      是否打开推送
+     * @param callBack    成功失败的回调
      */
     public static void initPush(final Context context, String packageName, final boolean isOpen, final YsUmengInitCallBack callBack) {
         //获取消息推送代理示例
@@ -53,32 +54,27 @@ public class YsUmengLib {
                     callBack.onGetDeviceToken(deviceToken);
                 }
 
-                try {
-                    if (isOpen) {
-                        mPushAgent.enable(new IUmengCallback() {
-                            @Override
-                            public void onSuccess() {
-                            }
+                if (isOpen) {
+                    mPushAgent.enable(new IUmengCallback() {
+                        @Override
+                        public void onSuccess() {
+                        }
 
-                            @Override
-                            public void onFailure(String s, String s1) {
-                            }
-                        });
-                    } else {
-                        mPushAgent.disable(new IUmengCallback() {
-                            @Override
-                            public void onSuccess() {
-                            }
+                        @Override
+                        public void onFailure(String s, String s1) {
+                        }
+                    });
+                } else {
+                    mPushAgent.disable(new IUmengCallback() {
+                        @Override
+                        public void onSuccess() {
+                        }
 
-                            @Override
-                            public void onFailure(String s, String s1) {
-                            }
-                        });
-                    }
-                } catch (Exception e) {
-//            e.printStackTrace();
+                        @Override
+                        public void onFailure(String s, String s1) {
+                        }
+                    });
                 }
-
 
             }
 
