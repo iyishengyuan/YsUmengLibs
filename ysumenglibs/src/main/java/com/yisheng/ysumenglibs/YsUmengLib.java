@@ -18,6 +18,20 @@ public class YsUmengLib {
     private static final String TAG = "YsUmengLib";
     public static final String UPDATE_STATUS_ACTION = "com.umeng.message.example.action.UPDATE_STATUS";
 
+
+    /**
+     * SDK预初始化函数
+     * preInit预初始化函数耗时极少，不会影响App首次冷启动用户体验
+     *
+     * @param context
+     * @param umengAppKey
+     * @param channelId
+     */
+    public static void preInit(Context context, String umengAppKey, String channelId) {
+        UMConfigure.preInit(context, umengAppKey, channelId);
+
+    }
+
     /**
      * 初始化 分析SDK
      *
