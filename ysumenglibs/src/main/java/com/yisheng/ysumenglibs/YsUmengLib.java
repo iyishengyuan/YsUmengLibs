@@ -11,6 +11,8 @@ import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengCallback;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
+import com.umeng.message.UmengMessageHandler;
+import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -89,7 +91,6 @@ public class YsUmengLib {
                         }
                     });
                 }
-
             }
 
             @Override
@@ -99,7 +100,21 @@ public class YsUmengLib {
                     callBack.onGetDeviceTokenError(s, s1);
                 }
             }
+
         });
+
+    }
+
+    /**
+     * 初始化 点击消息
+     * @param context
+     * @param messageHandler
+     * @param notificationClickHandler
+     */
+    public static void initPushMessageHandler(Context context, UmengMessageHandler messageHandler, UmengNotificationClickHandler notificationClickHandler) {
+        final PushAgent mPushAgent = PushAgent.getInstance(context);
+        mPushAgent.setMessageHandler(messageHandler);
+        mPushAgent.setNotificationClickHandler(notificationClickHandler);
     }
 
     /**
