@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 110
-        versionName "1.1.0"
+        versionCode 112
+        versionName "1.1.2"
         consumerProguardFiles 'consumer-rules.pro'
     }
 
@@ -33,7 +33,10 @@ dependencies {
     api 'com.umeng.umsdk:common:9.3.3'
     api 'com.umeng.umsdk:utdid:1.5.2'
 
-    // 友盟分析 start
+    api 'com.umeng.umsdk:share-core:7.1.4'
+    api 'com.umeng.umsdk:share-board:7.1.4'
+
+      // 友盟分析 start
     api 'com.umeng.umsdk:crash:0.0.5'
     //SDK 9.2.4及以上版本自带oaid采集模块，不再需要开发者再手动引用如下4个库
     api 'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
@@ -68,6 +71,12 @@ dependencies {
     api 'com.umeng.umsdk:asms:1.1.4' // asms包依赖(必选)
 //    implementation 'com.umeng.umsdk:apm:1.1.0' // U-APM产品包依赖(可选)
 
-//    // 友盟分享 libs方式集成
+//    // 友盟分享
+    api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'
+    api  'com.umeng.umsdk:share-qq:7.1.4'
+    api  'com.tencent.tauth:qqopensdk:3.51.2'    //QQ官方SDK依赖库
+    api  'com.umeng.umsdk:share-sina:7.1.4'
+    api  'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依赖库
+
 
 }
