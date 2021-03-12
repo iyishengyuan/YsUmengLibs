@@ -107,6 +107,7 @@ public class YsUmengLib {
 
     /**
      * 初始化 点击消息
+     *
      * @param context
      * @param messageHandler
      * @param notificationClickHandler
@@ -124,11 +125,11 @@ public class YsUmengLib {
      * @param WX_APP_ID
      * @param WX_APPSECRET
      */
-    public static void initShare(final Context context, String WX_APP_ID, String WX_APPSECRET) {
+    public static void initShare(final Context context, String WX_APP_ID, String WX_APPSECRET, String packageName) {
         UMShareAPI.get(context);
         UMConfigure.setLogEnabled(false);
         PlatformConfig.setWeixin(WX_APP_ID, WX_APPSECRET);
-        PlatformConfig.setWXFileProvider("com.tencent.sample2.fileprovider");
+        PlatformConfig.setWXFileProvider(packageName + ".fileprovider");
         final IWXAPI msgApi = WXAPIFactory.createWXAPI(context, WX_APP_ID);
         boolean wxRegist = msgApi.registerApp(WX_APP_ID);
         Log.e(TAG, "分享微信注册 " + wxRegist + "  ,  isWXAppInstalled  " + msgApi.isWXAppInstalled());
