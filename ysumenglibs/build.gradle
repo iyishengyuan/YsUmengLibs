@@ -36,11 +36,6 @@ dependencies {
     api 'com.umeng.umsdk:asms:1.2.1' //必选
     // 友盟分析 start
     api 'com.umeng.umsdk:crash:0.0.5'
-//    //SDK 9.2.4及以上版本自带oaid采集模块，不再需要开发者再手动引用如下4个库
-//    api 'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
-//    api 'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
-//    api 'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
-//    api 'com.umeng.umsdk:oaid_vivo:1.0.0.1' // (可选)
 
     // 友盟推送 start
     api 'com.umeng.umsdk:huawei-basetb:2.6.3.306'

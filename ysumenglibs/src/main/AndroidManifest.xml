@@ -3,7 +3,9 @@
     package="com.yisheng.ysumenglibs">
 
     <application android:usesCleartextTraffic="true">
-
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <!-- 以下为基本配置信息，需要自行添加至您的AndroidManifest文件中 start-->
         <service
             android:name="com.taobao.accs.ChannelService"
