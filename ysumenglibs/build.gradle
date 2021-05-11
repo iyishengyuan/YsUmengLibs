@@ -48,14 +48,10 @@ dependencies {
     api 'com.umeng.umsdk:agoo_networksdk:3.5.8'
     api 'com.umeng.umsdk:agoo_tnet4android:3.1.14.10'
 
-    //集成U-APM（可选）
-//    api 'com.umeng.umsdk:apm:1.2.0'
-
     // 友盟分享 已在lib内添加
     // 微信QQ在分享7.1.4SDK及以上适配方案 https://developer.umeng.com/docs/128606/detail/200753
     api 'com.tencent.tauth:qqopensdk:3.51.2'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5'
-
 
 
 }
