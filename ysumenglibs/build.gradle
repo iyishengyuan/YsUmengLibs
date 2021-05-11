@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 114
-        versionName "1.1.4"
+        versionCode 116
+        versionName "1.1.6"
         consumerProguardFiles 'consumer-rules.pro'
     }
 
@@ -61,9 +61,10 @@ dependencies {
     api 'com.umeng.umsdk:agoo_tnet4android:3.1.14.9'
 
 
-//    implementation 'com.umeng.umsdk:apm:1.1.0' // U-APM产品包依赖(可选)
-
-//    // 友盟分享 已在lib内添加
+    // 友盟分享 已在lib内添加
+    // 微信QQ在分享7.1.4SDK及以上适配方案 https://developer.umeng.com/docs/128606/detail/200753
+    api 'com.tencent.tauth:qqopensdk:3.51.2'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5'
 
 
 
