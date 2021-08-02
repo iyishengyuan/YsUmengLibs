@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengCallback;
@@ -13,8 +11,6 @@ import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UmengMessageHandler;
 import com.umeng.message.UmengNotificationClickHandler;
-import com.umeng.socialize.PlatformConfig;
-import com.umeng.socialize.UMShareAPI;
 
 public class YsUmengLib {
     private static final String TAG = "YsUmengLib";
@@ -118,23 +114,23 @@ public class YsUmengLib {
         mPushAgent.setNotificationClickHandler(notificationClickHandler);
     }
 
-    /**
-     * 初始化 分享SDK
-     *
-     * @param context
-     * @param WX_APP_ID
-     * @param WX_APPSECRET
-     */
-    public static void initShare(final Context context, String WX_APP_ID, String WX_APPSECRET, String packageName) {
-        UMShareAPI.get(context);
-        UMConfigure.setLogEnabled(false);
-        PlatformConfig.setWeixin(WX_APP_ID, WX_APPSECRET);
-        PlatformConfig.setWXFileProvider(packageName + ".fileprovider");
-        final IWXAPI msgApi = WXAPIFactory.createWXAPI(context, WX_APP_ID);
-        boolean wxRegist = msgApi.registerApp(WX_APP_ID);
-        Log.e(TAG, "分享微信注册 " + wxRegist + "  ,  isWXAppInstalled  " + msgApi.isWXAppInstalled());
-
-    }
+//    /**
+//     * 初始化 分享SDK
+//     *
+//     * @param context
+//     * @param WX_APP_ID
+//     * @param WX_APPSECRET
+//     */
+//    public static void initShare(final Context context, String WX_APP_ID, String WX_APPSECRET, String packageName) {
+//        UMShareAPI.get(context);
+//        UMConfigure.setLogEnabled(false);
+//        PlatformConfig.setWeixin(WX_APP_ID, WX_APPSECRET);
+//        PlatformConfig.setWXFileProvider(packageName + ".fileprovider");
+//        final IWXAPI msgApi = WXAPIFactory.createWXAPI(context, WX_APP_ID);
+//        boolean wxRegist = msgApi.registerApp(WX_APP_ID);
+//        Log.e(TAG, "分享微信注册 " + wxRegist + "  ,  isWXAppInstalled  " + msgApi.isWXAppInstalled());
+//
+//    }
 
     public interface YsUmengInitCallBack {
 
