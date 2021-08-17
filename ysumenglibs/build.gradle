@@ -51,7 +51,8 @@ dependencies {
 
     // 友盟分享 已在lib内添加
     // 微信QQ在分享7.1.4SDK及以上适配方案 https://developer.umeng.com/docs/128606/detail/200753
-    api 'com.tencent.tauth:qqopensdk:3.51.2'
-    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5'
+    //https://developer.umeng.com/docs/128606/detail/193911 更新指南(在这查看最新版 版本号)
+    api 'com.tencent.tauth:qqopensdk:3.53.0'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.0'
 
 }
