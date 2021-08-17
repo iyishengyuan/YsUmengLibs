@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 125
-        versionName "1.2.5"
+        versionCode 126
+        versionName "1.2.6"
         consumerProguardFiles 'consumer-rules.pro'
     }
 
@@ -28,7 +28,6 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api files('libs/umeng-asms-armeabi-v1.4.1.aar')
 
     // 基础组件库依赖(必须)
     api 'com.umeng.umsdk:common:9.4.2'
@@ -36,7 +35,7 @@ dependencies {
     api 'com.umeng.umsdk:utdid:1.5.2.1'
     api 'com.umeng.umsdk:link:1.0.0'
     // 友盟统计SDK
-//    api 'com.umeng.umsdk:asms:1.4.0' //必选 lib内添加aar
+    api 'com.umeng.umsdk:asms:1.4.1' //必选
     // 友盟分析 start
     api 'com.umeng.umsdk:crash:0.0.5'
 
