@@ -12,6 +12,7 @@ buildscript {
         maven { url "https://jitpack.io" }
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.4'
@@ -32,6 +33,7 @@ allprojects {
         maven { url "https://jitpack.io" }
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        mavenCentral()
     }
 }
 
