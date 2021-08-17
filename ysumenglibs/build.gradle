@@ -28,7 +28,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation files('libs/openDefault-10.10.0.jar')
+    api files('libs/openDefault-10.10.0.aar')
     // 基础组件库依赖(必须)
     api 'com.umeng.umsdk:common:9.4.2'
     api 'com.umeng.umsdk:utdid:1.5.2.1'
@@ -53,5 +53,5 @@ dependencies {
     //https://developer.umeng.com/docs/128606/detail/193911 更新指南(在这查看最新版 版本号)
     api 'com.tencent.tauth:qqopensdk:3.53.0'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.0'
-    api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依赖
+//    api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依赖
 }
