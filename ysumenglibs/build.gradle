@@ -61,5 +61,5 @@ dependencies {
     // 后上传到自己公司服务器，后续新浪微博官方会支持在线集成功能。
     // api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依赖
 
-    // ps : 由于直接 引入和添加aar jitpack 都编译不通过, 所以自行在工程里添加 aar文件
+    // ps : 由于直接 引入和添加aar jitpack 都编译不通过, 所以自行在工程里添加 aar文件  多么心疼我自己 白搞了好几个小时.. 垃圾新浪
 }
