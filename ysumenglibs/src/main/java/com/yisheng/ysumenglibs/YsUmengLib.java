@@ -31,7 +31,6 @@ public class YsUmengLib {
      */
     public static void preInit(Context context, String umengAppKey, String channelId) {
         UMConfigure.preInit(context, umengAppKey, channelId);
-
     }
 
     /**
