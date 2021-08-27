@@ -4,6 +4,15 @@
     package="com.yisheng.ysumenglibs">
 
     <application android:usesCleartextTraffic="true">
+
+        <queries>
+            <package android:name="com.tencent.mm" />          <!--    // 指定微信包名-->
+            <package android:name="com.tencent.mobileqq" />  <!--    //指定qq包名-->
+            <package android:name="com.sina.weibo" />         <!--      //指定微博包名-->
+            <package android:name="com.qzone" />                <!--    //指定QQ空间包名-->
+        </queries>
+
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
