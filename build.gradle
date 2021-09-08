@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenCentral()
         maven { url "https://maven.aliyun.com/repository/public" }
         maven { url "https://maven.aliyun.com/repository/central" }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -12,7 +13,8 @@ buildscript {
         maven { url "https://jitpack.io" }
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
-        mavenCentral()
+        maven { url 'http://4thline.org/m2' }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.4'
@@ -21,6 +23,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         maven { url "https://maven.aliyun.com/repository/public" }
         maven { url "https://maven.aliyun.com/repository/central" }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -33,7 +36,8 @@ allprojects {
         maven { url "https://jitpack.io" }
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
-        mavenCentral()
+        maven { url 'http://4thline.org/m2' }
+
     }
 }
 
